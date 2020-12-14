@@ -2,8 +2,8 @@ baseURL = "https://blog.ayukawa.dev"
 title = "Yuka Ayukawa's blog"
 theme = "zzo"
 
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
 
 summaryLength = 70
