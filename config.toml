@@ -1,68 +1,53 @@
-baseURL = "https://blog.ayukawa.dev/"
-languageCode = "en"
-DefaultContentLanguage = "en"
-enableInlineShortcodes = true
+baseURL = "https://blog.ayukawa.dev"
+title = "Yuka Ayukawa's blog"
+theme = "zzo"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+hasCJKLanguage = true
+
+summaryLength = 70
+buildFuture = true
+
+copyright = "&copy;{year}, All Rights Reserved"
+timeout = 10000
 enableEmoji = true
-# pagination = 10
+paginate = 13
+rssLimit = 100
 
-title = "Ayukawa Blog"
-author = "Yuka Ayukawa"
-copyright = "[Home](/) &#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)"
-
-theme = "simpleness"
+enableGitInfo = false
 googleAnalytics = ""
 
-[params]
-  lazyImage = true
-  enableMathJax = false # enable it in Front Matter
-  enableReadingTime = true
-  favicon = "favicon.ico"
-  startyear = "2019"
-  showmonth = true
-  slogan = ""
-  description = "A simple and concise hugo theme."
-  disqus = ""
-
-[params.valine]
-  enable = false
-  lang = 'en' # zh-CN
-  appId = ''
-  appKey = ''
-  placeholder = 'Say Something......'
-  requiredFields = ['nick', 'mail']
-  avatar = 'robohash'
-  visitor = true
-  enableHeaderVisitor = true
-  debug = true
-
-[menu]
-  [[menu.main]]
-  name = "Home"
-  url = "/"
-  weight = 1
-  [[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 2
-
-[social]
-  github = "https://github.com/RainerChiang"
-  rss = "index.xml"
-
-[taxonomies]
-category = "categories"
-tag = "tags"
-
-# doc: https://gohugo.io/getting-started/configuration-markup#highlight
-# syntax style: https://xyproto.github.io/splash/docs/longer/all.html
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xHTML = true
   [markup.highlight]
     codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
+    lineNos = true
     lineNumbersInTable = true
-    noClasses = true
-    style = "monokai" # github, dracula, vim, monokai
-    tabWidth = 4
+    noClasses = false
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+  section = ["HTML", "RSS", "SearchIndex"]
+  taxonomyTerm = ["HTML", "RSS", "SearchIndex"]
+  taxonomy = ["HTML", "RSS", "SearchIndex"]
+
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
