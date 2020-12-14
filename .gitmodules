@@ -1,3 +1,6 @@
 [submodule "themes/simpleness"]
 	path = themes/simpleness
 	url = https://github.com/yukad2/simpleness.git
+[submodule "themes/zzo"]
+	path = themes/zzo
+	url = https://github.com/yukad2/hugo-theme-zzo.git
